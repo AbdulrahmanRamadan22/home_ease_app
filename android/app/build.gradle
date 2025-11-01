@@ -1,0 +1,58 @@
+plugins {
+    id "com.android.application"
+    id "org.jetbrains.kotlin.android"
+    // ✅ يجب أن يأتي بعد البلجنات السابقة
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.home_service_app"
+    compileSdk = 35
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        // ✅ استخدام Java 17 لتفادي تحذيرات Java 8 مع Flutter الحديثة
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        // ✅ نفس التوافق مع JVM 17
+        jvmTarget = "17"
+    }
+
+    defaultConfig {
+        applicationId = "com.example.home_service_app"
+        minSdk = flutter.minSdkVersion
+        targetSdk = 35
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+            // ✅ تحسين الحجم عند إصدار النسخة النهائية
+            minifyEnabled false
+            shrinkResources false
+        }
+        debug {
+            signingConfig = signingConfigs.debug
+        }
+    }
+
+    // ✅ إصلاح مشكلة incremental Kotlin عند اختلاف الأقراص (C:/ و H:/)
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.22"
+}

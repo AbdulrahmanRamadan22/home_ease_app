@@ -1,0 +1,54 @@
+name: home_service_app
+description: "A new Flutter project."
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.2.5 <4.0.0"
+
+dependencies:
+  animated_loading_indicators: ^1.0.0+4
+  animated_login: ^1.7.2
+  animated_text_kit: ^4.3.0
+  animated_title_appbar: ^0.0.1
+  animated_tree_view: ^2.3.0
+  cloud_firestore: ^4.17.5
+  country_code_picker: ^3.0.0
+  cupertino_icons: ^1.0.8
+  date_picker_timeline: ^1.2.6
+  easy_localization: ^3.0.5
+  firebase_auth: ^4.20.0
+  firebase_core: ^2.31.0
+  firebase_storage: ^11.7.6
+  flutter:
+    sdk: flutter
+  flutter_animate: ^4.5.2
+  flutter_bloc: ^8.1.6
+  flutter_facebook_auth: ^6.0.4
+  flutter_native_splash: ^2.3.5
+  flutter_screenutil: ^5.9.0
+  flutter_svg: ^2.0.9
+  image_picker: ^1.1.1
+  smooth_page_indicator: ^1.2.1
+  time_picker_spinner: ^0.0.1
+  win32: ^5.4.0
+
+dev_dependencies:
+  build_runner: ^2.4.9
+  flutter_lints: ^3.0.2
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/translations/
+    - assets/svgs/
+    - assets/images/
+
+  fonts:
+    - family: Quicksand
+      fonts:
+        - asset: assets/fonts/Quicksand/static/Quicksand-Medium.ttf

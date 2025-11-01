@@ -1,0 +1,82 @@
+import 'package:flutter/material.dart'; 
+import 'package:home_service_app/core/theming/colors.dart'; 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home_service_app/core/helpers/app_regex.dart'; 
+import 'package:home_service_app/core/widgets/custom_button.dart';
+import 'package:home_service_app/core/theming/text_styles%20.dart';
+import 'package:home_service_app/core/widgets/app_text_form_field.dart';
+
+
+class ForgetPasswordScreen extends StatelessWidget {
+  const ForgetPasswordScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.h),
+        child: Form(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: Text(
+                  "Forget Password",
+                  style: TextStyles.font28Black700,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 24.h),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: SizedBox(
+                    width: 340.w,
+                    child: Text(
+                      'Don\'t worry sometimes people can forget too, enter your email and we will send you a password reset link.',
+                      textAlign: TextAlign.center,
+                      style: TextStyles.font14Black500,
+                    ),
+                  ),
+                ),
+              ),
+              Text(
+                'Email',
+                style: TextStyles.font16Black600,
+              ),
+              AppTextFormField(
+                keyboardType: TextInputType.emailAddress,
+                suffixIcon: Icon(
+                  Icons.email_outlined,
+                  color: ColorsApp.gray,
+                ),
+                hintText: 'Enter your Email',
+                validator: (value) {
+                  if (value == null ||
+                      value.isEmpty ||
+                      !AppRegex.isEmailValid(value)) {
+                    return 'Please enter a valid email';
+                  }
+                },
+              ),
+              SizedBox(
+                height: 48.h,
+              ),
+              CustomButton(
+                onPressed: () {
+                  // context.pushNamed(Routes.resetPasswordScreen,);
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //       builder: (context) => const ResetPasswordScreen()),
+                  // );
+                },
+                text: "Submit",
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

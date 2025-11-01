@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart'; 
+import 'package:easy_localization/easy_localization.dart'; 
+import 'package:home_service_app/core/theming/colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart'; 
+import 'package:home_service_app/translations/locale_keys.g.dart';
+import 'package:home_service_app/core/widgets/app_text_form_field.dart';
+ 
+// ignore_for_file: non_constant_identifier_names
+
+
+class CategoriesScreen extends StatelessWidget {
+  const CategoriesScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: ColorsApp.lightGreen,
+      appBar: AppBar(
+        leading: const SizedBox(),
+        title: Text(
+          'Categories'.tr(),
+          // 'Categories'.tr()
+        ),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        child: ListView(
+          children: [
+            SizedBox(
+              height: 10.h,
+            ),
+            AppTextFormField(
+              hintText: LocaleKeys.findCategory.tr(),
+              // "Find Category".tr(),
+              validator: (p0) {},
+              backgroundColor: ColorsApp.white,
+              suffixIcon: Icon(
+                Icons.search,
+                size: 30,
+                color: ColorsApp.gray,
+              ),
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
