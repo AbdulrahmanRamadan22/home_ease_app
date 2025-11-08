@@ -6,6 +6,8 @@ import 'package:home_service_app/translations/locale_keys.g.dart';
 import 'package:home_service_app/core/theming/text_styles%20.dart'; 
 import 'package:home_service_app/features/home/ui/widgets/logo_and_text.dart';
 import 'package:home_service_app/features/home/ui/widgets/card_location.dart';
+
+import '../../../core/routing/routes.dart';
 // ignore_for_file: non_constant_identifier_names
 
 
@@ -18,8 +20,13 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorsApp.lightGreen,
       appBar: AppBar(
-        leading: Image.asset(
-          "assets/images/notifications.png",
+        leading: InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, Routes.notificationScreen);
+          },
+          child: Image.asset(
+            "assets/images/notifications.png",
+          ),
         ),
         centerTitle: true,
         title: logoAndText(),

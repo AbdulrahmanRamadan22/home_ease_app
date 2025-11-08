@@ -31,4 +31,10 @@ class Routes {
 
   static const String adminCategoriesScreen = "/adminCategoriesScreen";
   static const String splashScreen = "/splashScreen";
+  static const String contactUsScreen = "/contactUsScreen";
+
+
+
+
+  
 }

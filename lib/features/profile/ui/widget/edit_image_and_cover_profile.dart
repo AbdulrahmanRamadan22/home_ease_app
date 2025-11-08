@@ -1,17 +1,21 @@
-import 'package:flutter/material.dart'; 
-import 'package:home_service_app/core/theming/colors.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 // ignore_for_file: must_be_immutable
 
+import 'package:flutter/material.dart';
 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/theming/colors.dart';
 
 class EditImageAndCoverProfile extends StatelessWidget {
-  const EditImageAndCoverProfile({
+  EditImageAndCoverProfile({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
+    // var profileImage = BlocProvider.of<ProfileCubit>(context).profileImage;
+    // var coverImage = BlocProvider.of<ProfileCubit>(context).coverImage;
+
     return SizedBox(
       height: 210.0.h,
       child: Stack(
@@ -25,8 +29,8 @@ class EditImageAndCoverProfile extends StatelessWidget {
                 Container(
                   height: 150.0.h,
                   width: double.infinity,
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(
                         4.0,
                       ),
@@ -35,9 +39,7 @@ class EditImageAndCoverProfile extends StatelessWidget {
                       ),
                     ),
                     image: DecorationImage(
-                      image: NetworkImage(
-                        'Not working yet',
-                      ),
+                      image: AssetImage('assets/images/cover2.jpg'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -54,7 +56,10 @@ class EditImageAndCoverProfile extends StatelessWidget {
                       size: 16.0,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    // BlocProvider.of<ProfileCubit>(context)
+                    //     .getCoverImageGallery();
+                  },
                 ),
               ],
             ),
@@ -63,14 +68,11 @@ class EditImageAndCoverProfile extends StatelessWidget {
             alignment: AlignmentDirectional.bottomEnd,
             children: [
               CircleAvatar(
-                radius: 66.0,
+                radius: 60.0,
                 backgroundColor: ColorsApp.white,
                 child: CircleAvatar(
-                  radius: 64.0,
-                  backgroundImage: const NetworkImage(
-                    'Not working yet',
-                  ),
-                  backgroundColor: ColorsApp.black,
+                  radius: 58.0,
+                  backgroundImage: AssetImage('assets/images/profile.png'),
                 ),
               ),
               IconButton(
@@ -86,7 +88,8 @@ class EditImageAndCoverProfile extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-               
+                  // BlocProvider.of<ProfileCubit>(context)
+                  //     .getProfileImageGallery();
                 },
               ),
             ],

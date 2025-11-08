@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart'; 
-import 'package:easy_localization/easy_localization.dart'; 
-import 'package:home_service_app/core/theming/colors.dart'; 
-import 'package:home_service_app/translations/locale_keys.g.dart';
-import 'package:home_service_app/features/home_layout/logic/cubit.dart';
-import 'package:home_service_app/features/home_layout/logic/state.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:easy_localization/easy_localization.dart';
+
+import '../../../core/theming/colors.dart';
+import '../../../translations/locale_keys.g.dart';
+import '../logic/cubit.dart';
+import '../logic/state.dart';
 
 class HomeLayoutScreen extends StatelessWidget {
   const HomeLayoutScreen({super.key});
@@ -37,6 +38,10 @@ class HomeLayoutScreen extends StatelessWidget {
               //  "Categories".tr(),
             ),
             const BottomNavigationBarItem(
+              icon: Icon(Icons.history),
+              label: "History",
+            ),
+             const BottomNavigationBarItem(
               icon: Icon(Icons.settings),
               label: "Settings",
             ),

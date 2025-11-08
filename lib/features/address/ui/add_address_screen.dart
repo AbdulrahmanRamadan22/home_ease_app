@@ -7,8 +7,8 @@ import 'package:home_service_app/core/widgets/app_text_form_field.dart';
 import 'package:home_service_app/core/widgets/card_address_location.dart';
  
 
-class AddressScreen extends StatelessWidget {
-  const AddressScreen({super.key});
+class AddAddressScreen extends StatelessWidget {
+  const AddAddressScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

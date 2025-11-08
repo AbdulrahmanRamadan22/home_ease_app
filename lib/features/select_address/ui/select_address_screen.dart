@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:home_service_app/core/helpers/navigation_extensions.dart';
 import 'package:home_service_app/core/theming/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home_service_app/core/widgets/custom_button.dart';
 import 'package:home_service_app/core/theming/text_styles%20.dart';
-import 'package:home_service_app/features/select_address/ui/widget/card_select_address.dart'; 
+import 'package:home_service_app/features/select_address/ui/widget/card_select_address.dart';
+
+import '../../../core/routing/routes.dart'; 
 
 class SelectAddress extends StatelessWidget {
   const SelectAddress({super.key});
@@ -19,7 +22,9 @@ class SelectAddress extends StatelessWidget {
         title: Text('Select Address'.tr(), style: TextStyles.font18Black700),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+                context.pushNamed(Routes.addAddressScreen);
+            },
             icon: const Icon(
               Icons.add,
             ),
@@ -77,7 +82,9 @@ class SelectAddress extends StatelessWidget {
             ),
             const Spacer(),
             CustomButton(
-              onPressed: () {},
+              onPressed: () {
+              
+              },
               text: 'Select'.tr(),
             ),
           ],

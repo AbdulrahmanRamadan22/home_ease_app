@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_service_app/core/routing/routes.dart';
 import 'package:home_service_app/features/home/ui/home_screen.dart';
+import '../../features/address/ui/add_address_screen.dart';
+import '../../features/contact_us/ui/contact_us_screen.dart';
 import '../../features/hourlycleaning/ui/widget/container_step_2.dart';
 import 'package:home_service_app/features/home_layout/logic/cubit.dart';
 import 'package:home_service_app/features/profile/ui/profile_screen.dart';
@@ -128,6 +130,24 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const EditProfileScreen(),
         );
+
+      case Routes.contactUsScreen:
+        return MaterialPageRoute(
+          builder: (context) => const ContactUS(),
+        );
+
+           case Routes.addAddressScreen:
+        return MaterialPageRoute(
+          builder: (context) => const AddAddressScreen(),
+        );
+
+
+        
+
+      // case Routes.editProfileScreen:
+      //   return MaterialPageRoute(
+      //     builder: (context) => const EditProfileScreen(),
+      //   );
 
       case Routes.categoriesScreen:
         return MaterialPageRoute(

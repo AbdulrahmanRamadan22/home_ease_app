@@ -1,12 +1,16 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart'; 
 import 'package:flutter/cupertino.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home_service_app/core/helpers/app_regex.dart';
-import 'package:home_service_app/core/widgets/custom_button.dart';
-import 'package:home_service_app/core/theming/text_styles%20.dart';
-import 'package:home_service_app/core/widgets/app_text_form_field.dart';
+import 'package:easy_localization/easy_localization.dart';
+
+import 'package:home_service_app/features/profile/ui/widget/edit_image_and_cover_profile.dart';
+
+import '../../../core/helpers/app_regex.dart';
+import '../../../core/theming/text_styles .dart';
+import '../../../core/widgets/app_text_form_field.dart';
+import '../../../core/widgets/custom_button.dart';
 
 class EditProfileScreen extends StatelessWidget {
   const EditProfileScreen({super.key});
@@ -25,6 +29,11 @@ class EditProfileScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            EditImageAndCoverProfile(),
+            const SizedBox(
+              height: 20.0,
+            ),
+
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Row(
@@ -34,7 +43,9 @@ class EditProfileScreen extends StatelessWidget {
                       children: [
                         CustomButton(
                           height: 50,
-                          onPressed: () {},
+                          onPressed: () {
+                            // cubit.uploadProfileImage(context);
+                          },
                           text: 'upload profile',
                         ),
                       ],
@@ -48,15 +59,27 @@ class EditProfileScreen extends StatelessWidget {
                       children: [
                         CustomButton(
                           height: 50,
-                          onPressed: () {},
+                          onPressed: () {
+                            // cubit.uploadCoverImage();
+                          },
                           text: 'upload cover',
                         ),
+                        // if (state is ProfileUpdateLoadingState)
+                        //   const SizedBox(
+                        //     height: 5.0,
+                        //   ),
+                        // if (state is ProfileUpdateLoadingState)
+                        //   const LinearProgressIndicator(
+                        //     color: ColorsApp.mainGreen,
+                        //   ),
                       ],
                     ),
                   ),
                 ],
               ),
             ),
+            // if (cubit.profileImage != null ||
+            //     cubit.coverImage != null)
             SizedBox(
               height: 32.h,
             ),
@@ -73,6 +96,10 @@ class EditProfileScreen extends StatelessWidget {
                     height: 8.h,
                   ),
                   AppTextFormField(
+                    // controller: context
+                    //     .read<ProfileCubit>()
+                    //     .fullNameController,
+
                     suffixIcon: const Icon(
                       Icons.person_2_outlined,
                       color: Color(0xffB5B5B5),
@@ -97,6 +124,8 @@ class EditProfileScreen extends StatelessWidget {
                     height: 8.h,
                   ),
                   AppTextFormField(
+                    // controller:
+                    //     context.read<ProfileCubit>().phoneController,
                     suffixIcon: const Icon(
                       Icons.phone_outlined,
                       color: Color(0xffB5B5B5),
@@ -117,6 +146,8 @@ class EditProfileScreen extends StatelessWidget {
                     text: 'Save Changes'.tr(),
                     style: TextStyles.font18Black700,
                     onPressed: () {
+                      // BlocProvider.of<ProfileCubit>(context)
+                      //     .updateUser();
                       // uploadProfileImage
                       //   context.pushNamed(Routes.);
                     },
@@ -154,6 +185,8 @@ class EditProfileScreen extends StatelessWidget {
           ],
         ),
       ),
+
+      // var userModel = ProfileCubit.get(context).userModel
     );
   }
 }

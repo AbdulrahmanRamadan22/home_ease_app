@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:home_service_app/core/theming/colors.dart'; 
+import 'package:flutter/material.dart';
+
+import '../../../../core/theming/colors.dart';
 
 class Card_profilescreen extends StatelessWidget {
   final dynamic leading;

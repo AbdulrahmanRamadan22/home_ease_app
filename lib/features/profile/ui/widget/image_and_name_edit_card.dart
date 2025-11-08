@@ -1,26 +1,31 @@
-import 'package:flutter/material.dart'; 
-import 'package:easy_localization/easy_localization.dart';
-import 'package:home_service_app/core/routing/routes.dart';
+import 'package:flutter/material.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home_service_app/core/theming/text_styles%20.dart';
-import 'package:home_service_app/core/widgets/custom_button.dart'; 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:home_service_app/core/helpers/navigation_extensions.dart';
+
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/text_styles .dart';
+import '../../../../core/widgets/custom_button.dart';
+import 'image_and_cover_profile.dart';
+
 // ignore: must_be_immutable
 class ProfileEditCard extends StatelessWidget {
-  const ProfileEditCard({
-    super.key,
-  });
+  ProfileEditCard({super.key,});
+
+  // UserModel? userModel;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       // mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        imageAndCoverProfile(),
         SizedBox(
           height: 12.h,
         ),
         Text(
-          'Edit Profile'.tr(),
+          "abdelrahman ramadan",
           style: TextStyles.font16Black700,
         ),
         SizedBox(
